@@ -5,7 +5,7 @@ export const LoginPage = () => {
     <>
       <section>
         <div className='bg-imgLogin'></div>
-        <h1>FitSquad</h1>
+        <h1 className="bg-primary text-2xl font-semibold text-primary">FitSquad</h1>
         <hr />
 
         <form action="">
