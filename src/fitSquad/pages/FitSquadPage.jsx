@@ -2,6 +2,8 @@
 
 export const FitSquadPage = () => {
   return (
-    <div>FitSquadPage</div>
+    <>
+      <h1>FitSquadPage</h1>
+    </>
   )
 }
