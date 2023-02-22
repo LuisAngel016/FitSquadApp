@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.inputForm {
+    @apply w-full px-0 p-2 mb-6 placeholder:text-secondary placeholder:text-xs border-solid border-b border-black text-sm font-FitSquad text-secondary shadow-sm;
+}

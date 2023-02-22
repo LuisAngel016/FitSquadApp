@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'imgLogin': "url(./src/assets/imgLogin.svg)"
+        // 'imgLogin': "url(./src/assets/imgLogin.jpp)"
       },
       backgroundColor: theme => ({
         ...theme('colors'),
@@ -17,6 +17,7 @@ module.exports = {
         'primary': '#F3F3F3',
         'secondary': '#000000',
         'terciary': '#616161',
+        'quaternary': '#283078',
       },
       fontFamily: {
         FitSquad: ['FitSquad', 'sans-serif']
