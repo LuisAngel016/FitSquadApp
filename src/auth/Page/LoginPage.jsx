@@ -13,7 +13,7 @@ export const LoginPage = () => {
         </div>
           <hr />
         <section className='bg-terciary flex-col justify-center'>
-          <h1 className="text-3xl text-secondary font-bold mb-14 font-FitSquad text-center">FitSquad</h1>
+          <h1 className="text-3xl text-secondary font-extrabold mb-14 font-FitSquad text-center">FitSquad</h1>
           
           <form action="">
             <input

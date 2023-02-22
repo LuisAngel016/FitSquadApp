@@ -20,7 +20,7 @@ module.exports = {
         'quaternary': '#283078',
       },
       fontFamily: {
-        FitSquad: ['FitSquad', 'sans-serif']
+        FitSquad: ['Poppins', 'sans-serif']
       }
     },
   },
