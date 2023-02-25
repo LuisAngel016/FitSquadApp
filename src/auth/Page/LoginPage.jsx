@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import imgFit from '../../assets/imgLogin.jpg';
 
 export const LoginPage = () => {
@@ -33,7 +34,12 @@ export const LoginPage = () => {
           <div className='flex mt-2 justify-between'>
             <input type="checkbox" className='py-2'/>
             <p className='py-2 ml-2 text-secondary text-xs font-FitSquad'>Recuerdame</p>
-            <a href="#" className='py-2 ml-8 text-quaternary text-xs font-FitSquad'>¿Olvidaste tu contraseña?</a>
+            <Link
+             className='py-2 ml-8 text-quaternary text-xs font-FitSquad'
+             to=""
+            >
+              ¿Olvidaste tu contraseña?
+            </Link>
           </div>
 
           <button
@@ -43,6 +49,12 @@ export const LoginPage = () => {
             Iniciar sesión
           </button>
 
+          <Link
+           className='mt-8 float-right pb-0 text-quaternary text-xs font-FitSquad border-solid border-b border-blue-900'
+           to="/auth/register"
+          >
+            Crear una cuenta
+          </Link>
         </section>
 
       </section>
