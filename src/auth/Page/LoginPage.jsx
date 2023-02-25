@@ -31,7 +31,7 @@ export const LoginPage = () => {
           </form>
 
           <div className='flex mt-2 justify-between'>
-            <input type="radio" className='py-2'/>
+            <input type="checkbox" className='py-2'/>
             <p className='py-2 ml-2 text-secondary text-xs font-FitSquad'>Recuerdame</p>
             <a href="#" className='py-2 ml-8 text-quaternary text-xs font-FitSquad'>¿Olvidaste tu contraseña?</a>
           </div>
