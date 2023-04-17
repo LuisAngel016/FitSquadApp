@@ -1,17 +1,14 @@
-
-
-export const SideBar = ({ drawerWidth = 240 }) => {
+export const SideBar = () => {
   return (
-    <>
-        <section className='bg-primary w-60 h-full p-8'>
-            <h1 className="text-primary text-2xl text-center font-extrabold mt-8 mb-14 font-FitSquad mb12-2">FitSquad</h1>
-            <h4 className="text-primary text-xs ml-6 mt-2 font-FitSquad">Home</h4>
-            <h4 className="text-primary text-xs ml-6 mt-2 font-FitSquad">Asesorados</h4>
-            <h4 className="text-primary text-xs ml-6 mt-2 font-FitSquad">Rutinas</h4>
-            <h4 className="text-primary text-xs ml-6 mt-2 font-FitSquad">Alimentación</h4>
-            <h4 className="text-primary text-xs ml-6 mt-2 font-FitSquad">Chat</h4>
-            <h4 className="text-primary text-xs ml-6 mt-2 font-FitSquad">Calendario</h4>
-        </section>
-    </>
+    <section className='w-2/12 bg-primary h-full  fixed font-FitSquad flex flex-col'>
+        <h1 className="text-primary text-2xl text-center font-extrabold mt-8 mb-20">FitSquad</h1>
+        <h4 className="navStyle bg-quinary">Inicio</h4>
+        <h4 className="navStyle">Asesorados</h4>
+        <h4 className="navStyle">Rutinas</h4>
+        <h4 className="navStyle">Alimentación</h4>
+        <h4 className="navStyle">Chat</h4>
+        <h4 className="navStyle">Calendario</h4>
+    </section>
   )
 }
+

@@ -1,24 +1,20 @@
-import { NavBar } from "../components/NavBar";
-import { SideBar } from "../components/SideBar"
+import { Header, SideBar } from "../components"
 
-
-// const drawerWidth = 240;
 
 export const FitSquadPage = () => {
   return (
-    <section className="flex">
+    <>
 
-        <SideBar /* drawerWidth={ drawerWidth } */ />
+      <div className="flex justify-between">
+        <div className="">
+            <SideBar />
+        </div>
+        <div className="w-10/12 py-4 box-border">
+            <Header />
+        </div>
+      </div>
 
-        <section className="m-10">
-          <NavBar /* drawerWidth={ drawerWidth } */ />
 
-
-          <h1>FitSquadPage</h1>
-
-        </section>
-
-
-    </section>
+    </>
   )
 }
