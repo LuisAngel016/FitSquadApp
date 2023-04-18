@@ -12,9 +12,22 @@
 .navStyle {
     @apply text-primary text-xs px-14 py-3 w-full;
 }
+.AdvisedContainer {
+    @apply p-2 w-60 flex justify-start items-center gap-3 bg-white font-FitSquad;
+}
+.AdvisedItem {
+    @apply text-sm font-extrabold;
+}
 .container {
     width: 291px;
     height: 43;
+}
+.container--dashboard {
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .profile {
     width: 53px;

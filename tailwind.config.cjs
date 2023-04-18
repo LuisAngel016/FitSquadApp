@@ -13,6 +13,7 @@ module.exports = {
         'terciary': '#FDFDFD',
         'quaternary': '#F1F1F1',
         'quinary': '#434981',
+        'senary': '#EDEEF6',
       }),
       textColor: {
         'primary': '#F3F3F3',
