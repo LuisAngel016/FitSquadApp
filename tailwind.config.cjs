@@ -21,6 +21,10 @@ module.exports = {
         'terciary': '#616161',
         'quaternary': '#283078',
       },
+      borderColor: theme => ({
+        ...theme('colors'),
+        'azul': '#283078',
+      }),
       fontFamily: {
         FitSquad: ['Poppins', 'sans-serif']
       }

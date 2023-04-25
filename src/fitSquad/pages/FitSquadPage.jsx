@@ -19,7 +19,6 @@ export const FitSquadPage = () => {
 
   return (
     <>
-
       <div className="flex justify-between">
         <div>
             <SideBar />
@@ -32,15 +31,14 @@ export const FitSquadPage = () => {
                 <AdvisedCard img={ AdvisedActive } advisedNum={ advisedNum2 } advisedCategory={ advisedCategory2 }/>
                 <AdvisedCard img={ AdvisedRegistered } advisedNum={ advisedNum3 } advisedCategory={ advisedCategory3 }/>
               </div>
-              <div className='bg-senary flex flex-col items-center justify-center px-10'>
-                <img className='w-9/12 h-auto' src={ chartImg } alt="" />
-                {/* <App /> */}
+              <div className='bg-senary flex items-center justify-center px-10'>
+                <div className='w-full bg-white flex justify-center items-center py-8 rounded-md'>
+                  <img className='w-8/12 h-auto' src={ chartImg } alt="" />
+                </div>
               </div>
             </div>
         </div>
       </div>
-
-
     </>
   )
 }
