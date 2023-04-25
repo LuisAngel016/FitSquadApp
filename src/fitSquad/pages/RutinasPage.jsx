@@ -22,11 +22,11 @@ export const RutinasPage = () => {
                     <div className='font-FitSquad flex py-9 flex-col justify-center px-52 mt-14 rounded-sm border-dotted border-2 border-azul shadow-md'>
                         <p className='font-medium text-sm text-center'>Suelte su archivo aquí <br /> o </p>
                         <input type="file" class="block w-full text-sm text-slate-500
-                            file:mr-4 file:py-2 file:px-4
-                            file:rounded-full file:border-0
-                            file:text-sm file:font-semibold
-                            file:bg-violet-200 file:text-secondary
-                            hover:file:bg-violet-300
+                             file:mr-4 file:py-2 file:px-4
+                             file:rounded-full file:border-0
+                             file:text-sm file:font-semibold
+                             file:bg-violet-200 file:text-violet-700
+                             hover:file:bg-violet-700 hover:file:text-violet-200
                         "/>
 
                     </div>
