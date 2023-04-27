@@ -3,7 +3,6 @@ import imgFit from '../../assets/img/imgLogin.jpg';
 import { useEffect, useMemo, useState } from 'react';
 
 import './LoginPage.css';
-import { focusInput } from '../helpers/formulario';
 
 export const LoginPage = () => {
 
