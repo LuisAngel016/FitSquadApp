@@ -25,6 +25,10 @@ module.exports = {
         ...theme('colors'),
         'azul': '#283078',
       }),
+      outlineColor: theme => ({
+        ...theme('colors'),
+        'azul': '#283078',
+      }),
       fontFamily: {
         FitSquad: ['Poppins', 'sans-serif']
       }
