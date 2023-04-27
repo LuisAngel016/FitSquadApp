@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    overflow: hidden;
+}
 
 .inputForm {
-    @apply w-full px-0 p-2 mb-6 placeholder:text-secondary placeholder:text-xs border-solid border-b border-black text-sm font-FitSquad text-secondary shadow-sm;
+    @apply w-full px-0 p-2 mb-6 bg-terciary placeholder:text-secondary placeholder:text-xs border-solid border-b border-black text-sm font-FitSquad text-secondary shadow-sm;
 }
 .inputSearch {
     @apply w-48 h-8 p-2 placeholder:text-secondary placeholder:text-sm font-FitSquad text-secondary;
@@ -37,3 +40,12 @@
     height: 53px;
     border-radius: 100%;
 }
+.padding {
+    padding: 20px;
+}
+.inputForm {
+    outline: none;
+    padding: 10px;
+    transition: border-bottom-color 0.3s ease-in-out;
+    width: 100%;
+  }
