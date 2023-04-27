@@ -25,8 +25,8 @@ export const FitSquadPage = () => {
         </div>
         <div className="w-10/12 py-4 box-border">
             <Header />
-            <div className='bg-senary h-full'>
-              <div className='flex justify-between px-10 items-center bg-senary mb-12'>
+            <div className='bg-senary h-screen'>
+              <div className='bg-senary flex justify-between px-10 items-center mb-12'>
                 <AdvisedCard img={ AdvisedNew } advisedNum={ advisedNum } advisedCategory={ advisedCategory }/>
                 <AdvisedCard img={ AdvisedActive } advisedNum={ advisedNum2 } advisedCategory={ advisedCategory2 }/>
                 <AdvisedCard img={ AdvisedRegistered } advisedNum={ advisedNum3 } advisedCategory={ advisedCategory3 }/>
