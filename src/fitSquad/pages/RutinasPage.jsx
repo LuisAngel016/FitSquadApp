@@ -1,10 +1,11 @@
 import { Header, SideBar } from '../components';
-import { useInputFile } from '../';
+import { useInputFile } from '../hooks/useInputFile';
+
+import pdfIcon from '../../assets/icon/archivo-pdf.png'
 
 export const RutinasPage = () => {
 
-  const { handleFileSubmit, handleFileUpload } = useInputFile();
-  
+  const { handleFileSubmit, selectedFile, handleFileUpload, handleFileDrop, fileInputRef } = useInputFile();
 
   return (
     <>
@@ -24,27 +25,40 @@ export const RutinasPage = () => {
                             placeholder='Seleccione un asesorado'
                           /> 
                       </div> 
-                      <div className='font-FitSquad flex py-9 flex-col justify-center px-52 mt-14 rounded-sm border-dotted border-2 border-azul shadow-md'>
-                          <p className='font-medium text-sm text-center'>Suelte su archivo aquí <br /> o </p>
+                      <div 
+                        className='font-FitSquad flex py-9 flex-col justify-center px-52 mt-14 rounded-sm border-dotted border-2 border-azul shadow-md'
+                        onDrop={ handleFileDrop }
+                      >
+                        <p className={`font-medium text-sm text-center ${selectedFile ? 'hidden' : 'inline-block'}`}>Suelte su archivo aquí <br /> o </p>
+                        <div className='flex flex-col gap-2'>
                           <input 
                             type="file" 
-                            className="block w-full text-sm text-slate-500
+                            className={`block w-full text-sm text-slate-500 cursor-pointer
                               file:mr-4 file:py-2 file:px-4
                               file:rounded-full file:border-0
                               file:text-sm file:font-semibold
                               file:bg-violet-200 file:text-violet-700
-                              hover:file:bg-violet-700 hover:file:text-violet-200"
+                              hover:file:bg-violet-700 hover:file:text-violet-200
+                              ${selectedFile ? 'hidden' : 'inline-block'}`}
                             onChange={ handleFileUpload }
                             accept=".pdf"
-                          />
+                            ref={ fileInputRef }
+                          /> 
+                          <div className="flex justify-center items-center">
+                            <img className={`${ selectedFile ? 'w-10 mr-2' : 'hidden' }`} src={ pdfIcon } alt="" />
+                            { selectedFile && <span className='mt-2 text-center text-base text-terciary'>{selectedFile.name}</span> } {/* Mostrar el nombre del archivo si existe */}
+                          </div>
 
+                        </div>
                       </div>
                       <button
                         className='w-44 mt-14 mb-14 p-2 bg-primary text-xs text-center text-primary font-FitSquad rounded-md shadow-md'
-                        onClick={ handleFileSubmit }
+                        onClick={handleFileSubmit}
+                        disabled={ !selectedFile }
                       >
                         Subir archivo
                       </button>
+
                   </div>
               </div>
             </div>
