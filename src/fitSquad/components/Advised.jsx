@@ -5,8 +5,7 @@ export const Advised = ({ img, user }) => {
   const { name, estado, objetivo, peso } = user;
 
   return (
-    <tbody>
-      <tr className="border-b border-gray-500">
+      <tr className="border-b border-gray-500 mb-10 ">
         <td className=" px-4 py-2 flex items-center gap-2">
           <figure className='w-12'>
             <img className='rounded-full ' src={ img } alt="" />
@@ -17,6 +16,5 @@ export const Advised = ({ img, user }) => {
         <td className="text-center  px-4 py-2">{ objetivo }</td>
         <td className="text-center  px-4 py-2">{ peso }</td>
       </tr>
-    </tbody>
   )
 }

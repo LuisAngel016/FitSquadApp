@@ -4,7 +4,12 @@ export const SideBar = () => {
 
   return (
     <nav className='w-2/12 bg-primary h-full fixed font-FitSquad flex flex-col'>
-        <h1 className="text-primary text-2xl text-center font-extrabold mt-8 mb-20">FitSquad</h1>
+        <NavLink 
+          className="text-primary text-2xl text-center font-extrabold mt-8 mb-20"
+          to={"/"} 
+        >
+          FitSquad
+        </NavLink>
         <NavLink 
           className={ ({ isActive }) => `navStyle ${ isActive ? ' bg-quinary' : '' }` }
           to={"/"} 
