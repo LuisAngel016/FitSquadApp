@@ -1,18 +1,27 @@
 import { useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
 import Swal from 'sweetalert2';
+import { onClearIsLoadingFile, onClearSelectUser, onSetIsloadingFile } from '../../store';
 
 
 export const useInputFile = () => {
-  
-  const [selectedFile, setSelectedFile] = useState();
 
+  const { isLoadingFile } = useSelector( state => state.fitSquad );
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+  
   const fileInputRef = useRef();
+  
+  console.log({isLoadingFile});
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
-  
     if (file && file.type === "application/pdf") {
-      setSelectedFile(file);
+      dispatch( onSetIsloadingFile(file));
+
       event.target.value = ''; // Limpiar el valor del input para evitar que se muestre dos veces
     } else {
       Swal.fire("Error al subir archivo","Por favor seleccione un archivo en formato PDF", "error");
@@ -21,10 +30,13 @@ export const useInputFile = () => {
 
   const handleFileSubmit = ( event ) => {
     event.preventDefault();
-    if (selectedFile) {
+    if (isLoadingFile) {
 
       console.log('Archivo enviado');
       Swal.fire("Archivo enviado","El archivo se envió correctamnente", "success");
+      dispatch( onClearIsLoadingFile() );
+      dispatch( onClearSelectUser() )
+      navigate();
 
     } else {
       Swal.fire("Error al enviar archivo","Por favor seleccione un archivo antes de enviarlo", "error");
@@ -42,8 +54,7 @@ export const useInputFile = () => {
 
   return {
     //* Propiedades
-    selectedFile,
-    setSelectedFile,
+    isLoadingFile,
     fileInputRef,
     
     //* Métodos
