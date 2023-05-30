@@ -10,5 +10,15 @@ export const fitSquadApi = axios.create({
 });
 
 // Todo: Configurar interceptores
+fitSquadApi.interceptors.request.use( config => {
+
+  config.headers = {
+      ...config.headers,
+      'x-token': localStorage.getItem('token')
+  }
+
+
+  return config;
+})
 
 export default fitSquadApi;

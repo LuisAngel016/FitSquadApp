@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { fitSquadApi } from "../api";
 import { clearErrorMessage, onChecking, onLogin, onLogout } from "../store";
-import { data } from "autoprefixer";
 
 
 export const useAuthStore = () => {
@@ -16,9 +15,10 @@ export const useAuthStore = () => {
         try {
             
             const resp = await fitSquadApi.post('/auth', { email, password });
-            console.log({ resp });
-            localStorage.setItem('token', data.token)
-            localStorage.setItem('token-init-date', new Date().getTime() )
+            console.log( resp.data );
+            const { data } = resp;
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('token-init-date', new Date().getTime() );
             dispatch( onLogin({ name: data.name, uid: data.uid  }) )
 
         } catch (error) {
@@ -28,6 +28,8 @@ export const useAuthStore = () => {
             }, 10);
         }
     }
+
+    const checkAuth
 
     return {
         // * Propiedades
