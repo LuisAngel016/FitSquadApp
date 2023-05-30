@@ -3,9 +3,12 @@ import { NavLink } from 'react-router-dom';
 
 import { useAuthStore, useForm } from '../../hooks';
 import { useFormIU } from '../hooks';
+import Swal from 'sweetalert2';
+
 import imgFit from '../../assets/img/imgLogin.jpg';
 
 import './LoginPage.css';
+import { useEffect } from 'react';
 
 
 const loginFormFields = {
@@ -15,10 +18,9 @@ const loginFormFields = {
 
 export const LoginPage = () => {
 
-  // const { selectUser, errorMessage } = useSelector(state => state.fitSquad);
   const dispatch = useDispatch();
 
-  const { startLogin } = useAuthStore();
+  const { startLogin, errorMessage } = useAuthStore();
 
   const { activeEmail, activePassword, handleClickInputEmail, handleClickInputPassword, focusInput, blurInput } = useFormIU();
   const { email, password, onInputChange, onResetForm } = useForm( loginFormFields );
@@ -26,8 +28,16 @@ export const LoginPage = () => {
   const loginSubmit = ( event ) => {
     event.preventDefault();
     // console.log({ email, password })
-    dispatch(startLogin({ email, password }))
+    startLogin({ email, password });
   }
+
+  useEffect(() => {
+
+    if ( errorMessage !== undefined ) {
+        Swal.fire('Error en la autenticación', errorMessage, 'error');
+    }
+    
+  }, [errorMessage]);
 
   return (
     <>

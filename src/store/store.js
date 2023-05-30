@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { fitSquadSlice } from './fitSquad'
-import { authSlice } from './auth'
+import { AuthSlice } from './auth'
 
 export const store = configureStore({
   reducer: {
-    auth: authSlice.reducer,
+    auth: AuthSlice.reducer,
     fitSquad: fitSquadSlice.reducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware ({
