@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 export const SideBar = () => {
 
   return (
-    <nav className='w-2/12 bg-primary h-full fixed font-FitSquad flex flex-col'>
+    <aside className='w-2/12 bg-primary h-full fixed font-FitSquad flex flex-col'>
         <NavLink 
           className="text-primary text-2xl text-center font-extrabold mt-8 mb-20"
           to={"/"} 
@@ -34,7 +34,7 @@ export const SideBar = () => {
         >
           Alimentación
         </NavLink>
-        <NavLink 
+        {/* <NavLink 
           className={ ({ isActive }) => `navStyle ${ isActive ? ' bg-quinary' : '' }` }
           to={"/chat"} 
         >
@@ -45,8 +45,8 @@ export const SideBar = () => {
           to={"/calendario"} 
         >
           Calendario
-        </NavLink>
-    </nav>
+        </NavLink> */}
+    </aside>
   )
 }
 

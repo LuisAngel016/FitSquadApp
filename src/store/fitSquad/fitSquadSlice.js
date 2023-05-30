@@ -11,12 +11,6 @@ export const fitSquadSlice = createSlice({
         errorMessage: null,
     },
     reducers: {
-        // onStartLoadingFile: (state) => {
-        //     state.isLoadingFile = true;
-        // },
-        // onStopLoadingFile: (state) => {
-        //     state.isLoadingFile = false;
-        // },
         onSetIsloadingFile: (state, { payload }) => {
             state.isLoadingFile = {
                 name: payload.name,
@@ -31,8 +25,16 @@ export const fitSquadSlice = createSlice({
             state.isLoadingFile = null;
             state.errorMessage = payload;
         },
-        onSetSelectUser: ( state) => {
-            state.selectUser = true;
+        onSetSelectUser: ( state, { payload }) => {
+            state.selectUser = payload;
+        },
+        onSetUser: ( state, { payload = [] }) => {
+            forEach( event => {
+                const exists = state.users.some( UserEvent => UserEvent.id === event.id );
+                if ( !exists ) {
+                    state.users.push( event );
+                }
+            })
         },
         onClearSelectUser: (state, { payload } ) => {
             state.selectUser = false;
@@ -50,6 +52,5 @@ export const {
     onSetError,
     onSetSelectUser,
     onClearSelectUser,
-    // onStartLoadingFile,
-    // onStopLoadingFile,
+    onSetUser
 } = fitSquadSlice.actions;

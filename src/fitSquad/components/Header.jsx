@@ -31,7 +31,7 @@ export const Header = () => {
   return (
     <>
       <header className="flex justify-between items-center px-10 bg-white font-FitSquad ">
-        <div className='rounded-lg flex justify-center items-center gap-2 shadow-md'>
+        <nav className='rounded-lg flex justify-center items-center gap-2 shadow-md'>
           <form 
             onSubmit={ onSearchSubmit }
             className='w-72 font-FitSquad py-2 bg-terciary  focus-within:border-sky-500 focus-within:ring-sky-500 focus-within:ring-1 focus-within:font-FitSquad px-1 border shadow-sm rounded-lg  border-slate-300 flex justify-between items-center'
@@ -52,7 +52,7 @@ export const Header = () => {
               onChange={ onInputChange }
             /> 
           </form>
-        </div> 
+        </nav> 
         <div className="profile text-base font-FitSquad bg-primary text-primary flex items-center justify-center">
           <p>LB</p>
         </div>

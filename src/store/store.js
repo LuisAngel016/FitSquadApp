@@ -1,10 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { AuthSlice } from './auth'
 import { fitSquadSlice } from './fitSquad'
+import { authSlice } from './auth'
 
 export const store = configureStore({
   reducer: {
-    auth: AuthSlice.reducer,
+    auth: authSlice.reducer,
     fitSquad: fitSquadSlice.reducer,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware ({
+    serializableCheck: false,
+  })
 })

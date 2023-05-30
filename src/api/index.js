@@ -1,2 +1,3 @@
 
-export * from './fitSquadApi';
+
+export { default as fitSquadApi } from './fitSquadApi';

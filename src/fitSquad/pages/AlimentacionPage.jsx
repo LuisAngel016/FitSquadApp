@@ -10,23 +10,23 @@ export const AlimentacionPage = () => {
   return (
     <>
         <div className="flex justify-between">
-            <div>
+            <aside>
                 <SideBar />
-            </div>
-            <div className="w-10/12 py-4 box-border h-screen overflow-hidden">
+            </aside>
+            <main className="w-10/12 py-4 box-border h-screen overflow-hidden">
                 <Header />
                 <div className='bg-senary relative flex justify-center items-center h-screen px-10'>
-                  <div className='w-full font-FitSquad bg-white flex flex-col justify-center items-center rounded-md absolute top-12'>
+                  <section className='w-full font-FitSquad bg-white flex flex-col justify-center items-center rounded-md absolute top-12'>
                       <h1 className='font-medium text-base mt-8'>CARGAR RUTINA EN PDF</h1>
 
                     {/* Renderizamos nuestro componente search para buscar nuestros accesorado */}
                       <Search />
-                      <div 
+                      <section 
                         className={`${ isLoadingFile ? 'px-52  py-9' : '' } pt-9 flex flex-col justify-center mt-14 rounded-sm border-dotted border-2 border-azul shadow-md`}
                         onDrop={ handleFileDrop }
                       >
                         <p className={`font-medium text-sm text-center ${ isLoadingFile ? 'hidden' : 'inline-block'}`}>Suelte su archivo aquí <br /> o </p>
-                        <div className=' flex flex-col gap-2'>
+                        <section className=' flex flex-col gap-2'>
                           <input 
                             type="file" 
                             className={`block w-full px-52 pb-9 text-sm text-slate-500 cursor-pointer
@@ -45,8 +45,8 @@ export const AlimentacionPage = () => {
                             { isLoadingFile && <span className='mt-2 text-center text-base text-terciary'>{isLoadingFile.name}</span> } {/* Mostrar el nombre del archivo si existe */}
                           </div>
 
-                        </div>
-                      </div>
+                        </section>
+                      </section>
                       <button
                         className='w-44 mt-14 mb-8 p-2 bg-primary text-xs text-center text-primary rounded-md shadow-md hover:bg-violet-700 hover:text-violet-200'
                         onClick={ handleFileSubmit }
@@ -54,9 +54,9 @@ export const AlimentacionPage = () => {
                       >
                         Subir archivo
                       </button>
-                  </div>
+                  </section>
               </div>
-            </div>
+            </main>
         </div>
     </>
   )

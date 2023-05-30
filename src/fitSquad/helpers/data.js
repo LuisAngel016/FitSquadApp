@@ -82,19 +82,19 @@ export const users = [
         objetivo: 'Pérdida de peso', 
         peso: '68 Kg' 
     },
-    {
-        id: 11, 
-        name: 'Carlos Romero', 
-        estado: 'Activo', 
-        objetivo: 'Aumento de masa muscular', 
-        peso: '85 Kg' 
-    },
-    {
-        id: 12, 
-        name: 'Laura Gómez', 
-        estado: 'Inactivo', 
-        objetivo: 'Mantenimiento de peso', 
-        peso: '58 Kg' 
-    }
+    // {
+    //     id: 11, 
+    //     name: 'Carlos Romero', 
+    //     estado: 'Activo', 
+    //     objetivo: 'Aumento de masa muscular', 
+    //     peso: '85 Kg' 
+    // },
+    // {
+    //     id: 12, 
+    //     name: 'Laura Gómez', 
+    //     estado: 'Inactivo', 
+    //     objetivo: 'Mantenimiento de peso', 
+    //     peso: '58 Kg' 
+    // }
 ];
   

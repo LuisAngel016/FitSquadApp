@@ -36,7 +36,7 @@ export const useInputFile = () => {
       Swal.fire("Archivo enviado","El archivo se envió correctamnente", "success");
       dispatch( onClearIsLoadingFile() );
       dispatch( onClearSelectUser() )
-      navigate();
+      navigate('');
 
     } else {
       Swal.fire("Error al enviar archivo","Por favor seleccione un archivo antes de enviarlo", "error");

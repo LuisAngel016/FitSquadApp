@@ -1,13 +1,33 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
+import { useAuthStore, useForm } from '../../hooks';
 import { useFormIU } from '../hooks';
 import imgFit from '../../assets/img/imgLogin.jpg';
+
 import './LoginPage.css';
 
 
+const loginFormFields = {
+  email: '',
+  password: ''
+}
+
 export const LoginPage = () => {
 
+  // const { selectUser, errorMessage } = useSelector(state => state.fitSquad);
+  const dispatch = useDispatch();
+
+  const { startLogin } = useAuthStore();
+
   const { activeEmail, activePassword, handleClickInputEmail, handleClickInputPassword, focusInput, blurInput } = useFormIU();
+  const { email, password, onInputChange, onResetForm } = useForm( loginFormFields );
+
+  const loginSubmit = ( event ) => {
+    event.preventDefault();
+    // console.log({ email, password })
+    dispatch(startLogin({ email, password }))
+  }
 
   return (
     <>
@@ -24,31 +44,35 @@ export const LoginPage = () => {
           <h1 className="text-3xl text-secondary font-extrabold mb-14 font-FitSquad text-center">FitSquad</h1>
           <div className="contenedor-formulario">
             <div className="wrap">
-              <form action="" className="formulario font-FitSquad">
+              <form onSubmit={ loginSubmit } className="formulario font-FitSquad">
                 <div>
                   <div className="input-group">
                     <input 
                       type="email" 
                       id="correo" 
-                      name="correo"
+                      name="email"
                       onClick={ handleClickInputEmail }
                       className={`label ${ activeEmail ? 'active' : '' }`}
                       onBlur={ blurInput }
                       onFocus={ focusInput }
+                      value={ email }
+                      onChange={ onInputChange }
                     />
-                    <label className="label"  for="correo">Correo electronico</label>
+                    <label className="label"  >Correo electronico</label>
                   </div>
                   <div className="input-group">
                     <input 
                       type="password" 
                       id="pass" 
-                      name="pass" 
+                      name="password" 
                       onClick={ handleClickInputPassword }
                       className={`label ${ activePassword ? 'active' : '' } `}
                       onBlur={ blurInput }
                       onFocus={ focusInput }
+                      value={ password }
+                      onChange={ onInputChange }
                     />
-                    <label className="label" for="pass">Contraseña</label>
+                    <label className="label" >Contraseña</label>
                   </div>
                 </div>
                 <div className='flex mt-2 justify-between'>
@@ -77,4 +101,5 @@ export const LoginPage = () => {
     </>
   )
 }
+
 

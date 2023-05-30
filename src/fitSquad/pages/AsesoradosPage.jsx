@@ -12,7 +12,7 @@ export const AsesoradosPage = () => {
         </div>
         <div className="w-10/12 py-4 box-border h-screen">
           <Header />
-          <div className='bg-senary flex justify-center items-center font-FitSquad py-12'>
+          <div className='bg-senary flex justify-center items-center font-FitSquad px-10 py-12'>
             <div className='bg-white rounded-md top-12'>
             <table className="table-fixed h-full w-full mt-7">
               <thead>
@@ -24,9 +24,11 @@ export const AsesoradosPage = () => {
                 </tr>
               </thead>
               <tbody>
-                {users.map(( user, index ) => (
-                  <Advised key={ user.id } user={ user } img={ profileImg } />
-                ))}
+                {
+                  users.map( (user) => (
+                    <Advised key={ user.id } user={ user } img={ profileImg } />
+                  ))
+                }
               </tbody>
             </table>
             </div>
